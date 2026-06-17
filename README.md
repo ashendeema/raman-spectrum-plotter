@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Raman Spectrum Plotter
 
 A Python tool for plotting Raman spectra from `.dat` files.
@@ -82,4 +81,4 @@ Ashen Deemantha Liyanage, Raman Spectrum Plotter, GitHub Repository.
 =======
 # raman-spectrum-plotter
 Automatic Raman spectrum plotting tool for computational spectroscopy.
->>>>>>> 515d68db9f37af4c143de99fc70839ab163054b9
+
