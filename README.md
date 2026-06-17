@@ -1,206 +1,141 @@
-# Raman Spectrum Plotter (with Peak Analysis)
+📘 Raman Spectrum Plotter
 
-A simple Python tool to visualize Raman spectra from `.dat` files and automatically detect peaks.
+The Raman Spectrum Plotter is a lightweight Python tool designed to automatically visualize Raman spectroscopy data stored in .dat files. It is developed for use in computational chemistry and physics workflows, particularly for analyzing vibrational spectra obtained from electronic structure calculations such as SIESTA or other DFT-based methods.
 
-This tool is designed for **research use in computational chemistry and physics**, especially for:
+This tool removes the need for manual plotting and provides a fast, reproducible way to generate publication-quality Raman spectra comparisons.
 
-* DFT vibrational analysis (e.g., SIESTA)
-* Raman spectrum comparison
-* Molecule–surface interaction studies
+👤 Author
 
----
-
-# 👤 Author
-
-**Ashen Deemantha Liyanage**
+Ashen Deemantha Liyanage
 Zayak’s Lab
 Department of Physics and Astronomy
 Bowling Green State University (BGSU)
 
----
+🔬 Purpose of the Tool
 
-# 📊 What this tool does (simple explanation)
+In Raman spectroscopy analysis, especially in computational studies, researchers often generate multiple .dat files representing different systems, geometries, or adsorption configurations. Manually plotting these datasets can be repetitive and error-prone.
 
-If you have Raman data files like:
+This tool is designed to:
 
-```
-100  0.12
-120  0.18
-140  0.30
-```
+Automatically detect all Raman .dat files in a directory
+Read and process spectral data without manual input
+Plot multiple spectra on a single figure for direct comparison
+Maintain consistent scientific visualization standards
+Generate high-resolution figures suitable for publications
+📁 Input Data Format
 
-This program will:
+The program expects each .dat file to contain two numerical columns without headers:
 
-✔ Plot all spectra automatically
-✔ Compare multiple datasets
-✔ Detect Raman peaks automatically
-✔ Save a publication-quality figure
-✔ Export peak positions into a CSV file
+Raman Shift (cm⁻¹)    Intensity (a.u.)
+100.0                 0.12
+101.0                 0.18
+102.0                 0.10
+Column 1 → Raman shift (cm⁻¹)
+Column 2 → Intensity (arbitrary units)
 
----
+Each file represents a separate Raman spectrum and will be plotted as an individual dataset.
 
-# 💻 How to Install (VERY IMPORTANT)
+💻 Installation Requirements
 
-## Step 1 — Install Python
+This script requires Python and a small set of scientific libraries.
 
-Make sure you have Python installed:
+Step 1: Install Python
 
-👉 https://www.python.org/downloads/
+Download and install Python from:
 
-Check by typing in terminal:
+https://www.python.org/downloads/
 
-```bash id="pycheck"
+Verify installation:
+
 python --version
-```
 
 or
 
-```bash id="pycheck2"
 python3 --version
-```
+Step 2: Install required libraries
 
----
+Install dependencies using pip:
 
-## Step 2 — Install required libraries
+pip install numpy matplotlib
 
-Open terminal (Mac/Linux) or Command Prompt (Windows) and run:
+If needed:
 
-```bash id="install1"
-pip install numpy matplotlib scipy
-```
+pip3 install numpy matplotlib
+🚀 How to Use
+Step 1: Prepare your working directory
 
-If this does not work, try:
+Place the following in the same folder:
 
-```bash id="install2"
-pip3 install numpy matplotlib scipy
-```
-
----
-
-# 📁 How to Use
-
-## Step 1 — Prepare your data
-
-Put all `.dat` files in the SAME folder as the script.
-
-Example:
-
-```
 raman_plotter.py
-sample1.dat
-sample2.dat
-```
+One or more .dat Raman spectrum files
 
----
+Example structure:
 
-## Step 2 — Run the program
+project_folder/
+│
+├── raman_plotter.py
+├── spectrum_A.dat
+├── spectrum_B.dat
+├── spectrum_C.dat
+Step 2: Run the script
 
-In terminal, go to the folder:
+Open a terminal in the project folder and execute:
 
-```bash id="run1"
-cd path/to/your/folder
-```
-
-Then run:
-
-```bash id="run2"
 python raman_plotter.py
-```
 
 or
 
-```bash id="run3"
 python3 raman_plotter.py
-```
+📊 Output
 
----
+After execution, the program will automatically generate:
 
-# 📤 Output files
+1. Raman spectrum plot
+Multiple spectra displayed in a single figure
+Each dataset labeled using its filename
+Filled curves for improved visual clarity
+Consistent color scheme for easy comparison
+2. High-resolution image file
 
-After running, you will get:
+The plot is saved automatically as a .png file with a descriptive name based on the datasets used.
 
-### 1. Raman plot image
+⚙️ Key Features
+Fully automatic file detection (*.dat)
+Multi-spectrum comparison in a single plot
+Publication-quality visualization using Matplotlib
+Consistent scientific styling (Times New Roman font)
+Automatic figure saving in high resolution (300 DPI)
+No manual configuration required for standard use
+🔬 Scientific Applications
 
-```
-raman_analysis.png
-```
+This tool is particularly useful in:
 
-### 2. Peak data file
+Raman spectroscopy analysis of molecular systems
+DFT-based vibrational mode comparisons
+Surface adsorption studies (e.g., molecule–substrate interactions)
+Photophysical and photochemical research
+Computational materials science workflows
 
-```
-raman_peaks.csv
-```
+It is especially suitable for comparing spectral changes between different structural configurations or environments.
 
-This CSV file can be opened in:
+⚠️ Notes and Best Practices
+Ensure .dat files contain only numeric data (no headers)
+Keep all input files in the same directory as the script
+Avoid missing or irregular columns in data files
+Recommended for use with clean, pre-processed spectral outputs
+📜 Citation
 
-* Excel
-* Origin
-* Python
-* MATLAB
+If you use this software in published research, please cite:
 
----
+Ashen Deemantha Liyanage
+Raman Spectrum Plotter (2026)
+Zayak’s Lab, Bowling Green State University
+GitHub Repository: https://github.com/ashendeema/raman-spectrum-plotter
 
-# 📂 Example data
+📄 License
 
-Check the `examples/` folder for sample files.
+This project is released under the MIT License, allowing free use, modification, and distribution for academic and research purposes.
 
----
+🌟 Summary
 
-# ⚙️ Requirements
-
-This program uses:
-
-* numpy → numerical calculations
-* matplotlib → plotting graphs
-* scipy → peak detection
-
----
-
-# 🔬 Scientific use cases
-
-This tool is useful for:
-
-* Raman spectroscopy analysis
-* DFT vibrational mode assignment
-* Surface adsorption studies
-* Molecular comparison studies
-* Photochemical systems (CuPc, BaTiO₃, etc.)
-
----
-
-# ⚠️ Troubleshooting
-
-### Problem: "command not found: python"
-
-Use:
-
-```bash
-python3
-```
-
----
-
-### Problem: pip not working
-
-Try:
-
-```bash
-python -m pip install numpy matplotlib scipy
-```
-
----
-
-# 📜 Citation
-
-If you use this tool in research, please cite:
-
-> Ashen Deemantha Liyanage
-> Raman Spectrum Plotter (2026)
-> GitHub: https://github.com/ashendeema/raman-spectrum-plotter
-
----
-
-# 📄 License
-
-MIT License — free to use, modify, and distribute.
-
+The Raman Spectrum Plotter provides a fast, reproducible, and publication-ready workflow for visualizing Raman spectral data. It is designed to reduce manual effort and improve consistency in computational spectroscopy analysis.
