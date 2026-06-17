@@ -1,84 +1,206 @@
-# Raman Spectrum Plotter
+# Raman Spectrum Plotter (with Peak Analysis)
 
-A Python tool for plotting Raman spectra from `.dat` files.
+A simple Python tool to visualize Raman spectra from `.dat` files and automatically detect peaks.
 
-## Author
+This tool is designed for **research use in computational chemistry and physics**, especially for:
 
-Ashen Deemantha Liyanage
+* DFT vibrational analysis (e.g., SIESTA)
+* Raman spectrum comparison
+* Molecule–surface interaction studies
 
-Zayak's Lab
+---
+
+# 👤 Author
+
+**Ashen Deemantha Liyanage**
+Zayak’s Lab
 Department of Physics and Astronomy
 Bowling Green State University (BGSU)
 
-## Description
+---
 
-This script automatically:
+# 📊 What this tool does (simple explanation)
 
-* Detects all `.dat` files in the current directory
-* Uses filenames as legend labels
-* Plots multiple Raman spectra on the same figure
-* Applies customizable colors
-* Fills the area under each spectrum
-* Saves a high-resolution PNG image automatically
+If you have Raman data files like:
 
-## Requirements
-
-```bash
-pip install -r requirements.txt
+```
+100  0.12
+120  0.18
+140  0.30
 ```
 
-## Input Format
+This program will:
 
-Each `.dat` file should contain two columns:
+✔ Plot all spectra automatically
+✔ Compare multiple datasets
+✔ Detect Raman peaks automatically
+✔ Save a publication-quality figure
+✔ Export peak positions into a CSV file
 
-```text
-RamanShift    Intensity
-100.0         0.12
-101.0         0.15
-102.0         0.11
-...
+---
+
+# 💻 How to Install (VERY IMPORTANT)
+
+## Step 1 — Install Python
+
+Make sure you have Python installed:
+
+👉 https://www.python.org/downloads/
+
+Check by typing in terminal:
+
+```bash id="pycheck"
+python --version
 ```
 
-## Usage
+or
 
-Place the script inside a folder containing Raman spectra:
+```bash id="pycheck2"
+python3 --version
+```
 
-```bash
+---
+
+## Step 2 — Install required libraries
+
+Open terminal (Mac/Linux) or Command Prompt (Windows) and run:
+
+```bash id="install1"
+pip install numpy matplotlib scipy
+```
+
+If this does not work, try:
+
+```bash id="install2"
+pip3 install numpy matplotlib scipy
+```
+
+---
+
+# 📁 How to Use
+
+## Step 1 — Prepare your data
+
+Put all `.dat` files in the SAME folder as the script.
+
+Example:
+
+```
+raman_plotter.py
+sample1.dat
+sample2.dat
+```
+
+---
+
+## Step 2 — Run the program
+
+In terminal, go to the folder:
+
+```bash id="run1"
+cd path/to/your/folder
+```
+
+Then run:
+
+```bash id="run2"
 python raman_plotter.py
 ```
 
-The script will automatically detect all `.dat` files and generate:
+or
 
-```text
-Raman spectrum of filename.png
+```bash id="run3"
+python3 raman_plotter.py
 ```
 
-## Features
+---
 
-* Automatic file discovery
-* Multiple spectra comparison
-* Publication-quality figures
-* Times New Roman formatting
-* Customizable color scheme
-* Automatic figure saving
+# 📤 Output files
 
-## Example
+After running, you will get:
 
-```text
-sample1.dat
-sample2.dat
-sample3.dat
+### 1. Raman plot image
+
+```
+raman_analysis.png
 ```
 
-produces a single comparison plot with legends automatically generated from the filenames.
+### 2. Peak data file
 
-## Citation
+```
+raman_peaks.csv
+```
 
-If you use this software in your research, please cite:
+This CSV file can be opened in:
 
-Ashen Deemantha Liyanage, Raman Spectrum Plotter, GitHub Repository.
+* Excel
+* Origin
+* Python
+* MATLAB
 
-=======
-# raman-spectrum-plotter
-Automatic Raman spectrum plotting tool for computational spectroscopy.
+---
+
+# 📂 Example data
+
+Check the `examples/` folder for sample files.
+
+---
+
+# ⚙️ Requirements
+
+This program uses:
+
+* numpy → numerical calculations
+* matplotlib → plotting graphs
+* scipy → peak detection
+
+---
+
+# 🔬 Scientific use cases
+
+This tool is useful for:
+
+* Raman spectroscopy analysis
+* DFT vibrational mode assignment
+* Surface adsorption studies
+* Molecular comparison studies
+* Photochemical systems (CuPc, BaTiO₃, etc.)
+
+---
+
+# ⚠️ Troubleshooting
+
+### Problem: "command not found: python"
+
+Use:
+
+```bash
+python3
+```
+
+---
+
+### Problem: pip not working
+
+Try:
+
+```bash
+python -m pip install numpy matplotlib scipy
+```
+
+---
+
+# 📜 Citation
+
+If you use this tool in research, please cite:
+
+> Ashen Deemantha Liyanage
+> Raman Spectrum Plotter (2026)
+> GitHub: https://github.com/ashendeema/raman-spectrum-plotter
+
+---
+
+# 📄 License
+
+MIT License — free to use, modify, and distribute.
 
